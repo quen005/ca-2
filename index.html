@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packson's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <section class="header" id="header">
+        <div class="container">
+            <nav>
+                <a href="#home" class="logo"><img src="images/welcome.png" alt="logo"></a>
+                <ol>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#profile">Profile</a></li>
+                    <li><a href="#project">Project</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Home Section -->
+    <section class="home" id="home">
+        <div class="container">
+            <h1>Quentin Packsons World</h1>
+            <p>Hey there, I am a student of Pan-Atlantic university in the Department of Media and Communication.</p>
+        </div>
+    </section>
+
+    <!-- Profile Section -->
+    <section class="profile" id="profile">
+        <div class="container">
+            <div class="row">
+                <div class="profile-col-1">
+                    <img src="images/pace img2.png" alt="Profile Image 1">
+                    <img src="images/pace img3.png" alt="Profile Image 2">
+                </div>
+                <div class="profile-col-2">
+                    <h1 class="sub-title">Profile</h1>
+                    <p>I love playing football and swimming as well. I dance at my free time, especially when I listen to music. I study information science and media studies, and it is my first year in the university. I would really love to play football professionally, but if that does not work out, I will want to go into coding and computer programming.</p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="openTab('skills')">Skills</p>
+                        <p class="tab-links" onclick="openTab('experience')">Experience</p>
+                        <p class="tab-links" onclick="openTab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ol>
+                            <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
+                            <li><span>Web Development</span><br>Web app Development</li>
+                            <li><span>App Development</span><br>Building Android/iOS apps</li>
+                        </ol>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ol>
+                            <li><span>2023 - current</span><br>Designing Web/App interfaces</li>
+                            <li><span>2021 - 2022</span><br>Science And Technology Institution</li>
+                            <li><span>2019 - 2020</span><br>Science And Technology Institution</li>
+                        </ol>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ol>
+                            <li><span>2023</span><br>Pan-Atlantic university</li>
+                            <li><span>2024</span><br>Pan-Atlantic university</li>
+                            <li><span>2025</span><br>Pan-Atlantic university</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Section -->
+    <section class="project" id="project">
+        <div class="container">
+            <h1 class="sub-title">My Project</h1>
+            <div class="project-list">
+                <div>
+                    <img src="images/code image.png" alt="Coding Project">
+                    <h2>Coding</h2>
+                    <p>I code Various applications using HTML, Java, and sometimes Python in various works.</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <img src="images/programming image.png" alt="Programming Project">
+                    <h2>Programming</h2>
+                    <p>I program Various applications using HTML, Java, and sometimes Python in various works.</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <img src="images/web design image.png" alt="Web Design Project">
+                    <h2>Web Design</h2>
+                    <p>I design Various websites using HTML, Java, and sometimes Python in various works.</p>
+                    <a href="#">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Us</h1>
+                    <p>quentinpackson@gmail.com</p>
+                    <p>Quentinpackson6@gmail.com</p>
+                    <p>09075444447</p>
+                    <p>08023245689</p>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright &copy; Quentin. Made with by Easy Tutorials</p>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Tab content toggle
+        var tabLinks = document.getElementsByClassName("tab-links");
+        var tabContents = document.getElementsByClassName("tab-contents");
+
+        function openTab(tabName) {
+            for (var i = 0; i < tabLinks.length; i++) {
+                tabLinks[i].classList.remove("active-link");
+            }
+            for (var i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabName).classList.add("active-tab");
+        }
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            alert('Submission entered'); // Show the dialog box
+            // You can add additional code here to handle form submission
+        });
+    </script>
+
+</body>
+</html>
